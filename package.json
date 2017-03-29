@@ -1,0 +1,22 @@
+{
+  "name": "lovejoy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "test": "mocha-webpack --webpack-config webpack.config-test.js --require source-map-support/register \"src/**/*.spec.js\""
+  },
+  "author": "Anssi Törmä",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^2.3.2",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "mocha-webpack": "^0.7.0",
+    "source-map-support": "^0.4.14"
+  }
+}
