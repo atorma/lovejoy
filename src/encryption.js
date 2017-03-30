@@ -3,7 +3,12 @@
 const UNICODE_MIN_CHARCODE = 0;
 const UNICODE_MAX_CHARCODE = 65535;
 
-export function encrypt(cleartext) {
+module.exports = {
+  encrypt: encrypt,
+  decrypt: decrypt
+};
+
+function encrypt(cleartext) {
   const result = {
     key: '',
     ciphertext: ''
@@ -21,7 +26,7 @@ export function encrypt(cleartext) {
   return result;
 }
 
-export function decrypt(keyAndCiphertext) {
+function decrypt(keyAndCiphertext) {
   const key = keyAndCiphertext.key;
   const ciphertext = keyAndCiphertext.ciphertext;
   let result = '';
