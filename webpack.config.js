@@ -2,10 +2,7 @@
 
 const webpack = require('webpack');
 const path = require('path');
-const crypto = require('./src/problem-generation/encryption');
-
-const cleartext = 'Lennä Barceolonaan';
-const encrypted = crypto.encrypt(cleartext);
+const problem = require('./src/problem-generation/problem');
 
 module.exports = {
   entry: './src/app/lovejoy.js',
@@ -16,7 +13,7 @@ module.exports = {
   devtool: 'sourcemap',
   plugins: [
     new webpack.DefinePlugin({
-      ENCRYPTED: JSON.stringify(encrypted)
+      ENCRYPTED: JSON.stringify(problem)
     })
   ]
 };
