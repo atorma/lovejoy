@@ -10,8 +10,6 @@ describe('Encryption and decryption', function () {
   it('encrypt() returns an object with expected properties', function () {
     const encryptionResult = encrypt('whatever');
 
-    console.log(encryptionResult);
-
     encryptionResult.should.have.property('key');
     encryptionResult.should.have.property('ciphertext');
   });

@@ -2,7 +2,9 @@
 
 const webpack = require('webpack');
 const path = require('path');
-const problem = require('./src/problem-generation/problem');
+const generateProblem = require('./src/problem-generation/problem');
+
+const cleartext = '                        Lennä Barcelonaan!                        ';
 
 module.exports = {
   entry: './src/app/lovejoy.js',
@@ -13,7 +15,7 @@ module.exports = {
   devtool: 'sourcemap',
   plugins: [
     new webpack.DefinePlugin({
-      ENCRYPTED: JSON.stringify(problem)
+      ENCRYPTED: JSON.stringify(generateProblem(cleartext))
     })
   ]
 };
