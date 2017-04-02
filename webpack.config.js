@@ -22,5 +22,13 @@ module.exports = {
       template: 'src/app/index.html',
       favicon: 'src/app/lovejoy.jpg'
     })
-  ]
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
+    ]
+  }
 };
