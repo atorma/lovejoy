@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <title>Lovejoy</title>
 </head>
-<body>
+<body data-whatinput="mouse">
+    <header class="header"></header>
     <main>
-        <div id="editor">
-            function solve(keyChars, cipherCharTree) {
-                return 'Tämä ei ole oikea vastaus';
-            }
+        <div class="code">
+            <div id="editor" class="editor">
+function solve(keyChars, cipherCharTree) {
+    return 'Tämä ei ole oikea vastaus';
+}
+            </div>
+        </div>
+        <div class="row row--buttons">
+            <div class="columns text-right">
+                <button type="button" class="button primary">Aja!</button>
+            </div>
         </div>
     </main>
 

@@ -1,0 +1,22 @@
+.code {
+    position: relative;
+    height: 480px;
+}
+
+.editor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.header {
+    height: 280px;
+    background: url('./lovejoy.jpg') no-repeat;
+    background-size: cover;
+}
+
+.row--buttons {
+    padding: 1rem 0 1rem 0;
+}

@@ -21,6 +21,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/app/index.html',
       favicon: 'src/app/lovejoy.jpg'
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
     })
   ],
   module: {
@@ -28,6 +32,13 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000
+        }
       }
     ]
   }
