@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "test": "mocha-webpack --webpack-config webpack.config-test.js --require source-map-support/register \"src/**/*.spec.js\"",
-    "start": "webpack-dev-server --open"
+    "dev": "webpack-dev-server --inline --hot --env.dev"
   },
   "author": "Anssi Törmä",
   "license": "ISC",
@@ -16,6 +16,7 @@
     "css-loader": "^0.28.0",
     "file-loader": "^0.11.1",
     "html-webpack-plugin": "^2.28.0",
+    "inject-loader": "^3.0.0",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
     "mocha": "^3.2.0",

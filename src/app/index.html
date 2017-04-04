@@ -8,15 +8,30 @@
     <header class="header"></header>
     <main>
         <div class="code">
-            <div id="editor" class="editor">
-function solve(keyChars, cipherCharTree) {
-    return 'Tämä ei ole oikea vastaus';
-}
-            </div>
+            <div id="editor" class="editor">return function solve(keyChars, cipherCharTree) {
+    /* Oma koodi tänne */
+    keyChars.sort((e1, e2) => e1.sortOrder - e2.sortOrder);
+    const key = keyChars.reduce((result, keyItem) => result + keyItem.character, '');
+
+    let ciphertext = '';
+    function visit(node) {
+    node.children.forEach(c => visit(c));
+    ciphertext += node.character;
+    }
+    visit(cipherCharTree);
+
+    let solution = '';
+
+    for (let i = 0; i < ciphertext.length; i++) {
+    solution += String.fromCharCode(key.charCodeAt(i) ^ ciphertext.charCodeAt(i));
+    }
+
+    return solution;
+}</div>
         </div>
         <div class="row row--buttons">
             <div class="columns text-right">
-                <button type="button" class="button primary">Aja!</button>
+                <button id="run-button" type="button" class="button primary">Aja!</button>
             </div>
         </div>
     </main>

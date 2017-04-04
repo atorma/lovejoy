@@ -13,7 +13,7 @@ module.exports = {
     filename: 'lovejoy.js',
     path: path.join(__dirname, 'dist')
   },
-  devtool: 'cheap-eval-source-map',
+  devtool: 'eval-source-map',
   plugins: [
     new webpack.DefinePlugin({
       ENCRYPTED: JSON.stringify(generateProblem(cleartext))
@@ -25,7 +25,8 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ],
   module: {
     rules: [
