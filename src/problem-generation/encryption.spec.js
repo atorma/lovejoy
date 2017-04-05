@@ -15,8 +15,11 @@ describe('Encryption and decryption', function () {
   });
 
   it('result of encrypt() is decrypted by decrypt()', function () {
-    const cleartext = 'cleartext';
-    decrypt(encrypt(cleartext)).should.be.equal(cleartext);
+    const cleartext = '                      Lennä Barcelonaan!                      ';
+    const encryptionResult = encrypt(cleartext);
+    const decryptionResult = decrypt(encryptionResult);
+    console.log('Result:', decryptionResult);
+    decryptionResult.should.be.equal(cleartext);
   });
 
 
