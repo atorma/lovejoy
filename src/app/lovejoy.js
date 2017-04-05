@@ -16,7 +16,9 @@ import Editor from './editor';
 $(document).foundation();
 
 const editor = new Editor((solve) => {
-  console.log('Result', solve(ENCRYPTED.keyArray, ENCRYPTED.ciphertextTree));
+  const result = solve(ENCRYPTED.keyArray, ENCRYPTED.ciphertextTree);
+  console.log(result);
+  $('.header__result').html(result);
 });
 
 $('#run-button').click(() => editor.evalAndRun());

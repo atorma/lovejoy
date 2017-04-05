@@ -5,25 +5,34 @@
     <title>Lovejoy</title>
 </head>
 <body data-whatinput="mouse">
-    <header class="header"></header>
+    <header class="header">
+        <span class="header__result"></span>
+    </header>
     <main>
         <div class="code">
             <div id="editor" class="editor">return function solve(keyChars, cipherCharTree) {
     /* Oma koodi tänne */
-    keyChars.sort((e1, e2) => e1.sortOrder - e2.sortOrder);
-    const key = keyChars.reduce((result, keyItem) => result + keyItem.character, '');
 
-    let ciphertext = '';
+    keyChars.sort(function (e1, e2) {
+        return e1.sortOrder - e2.sortOrder;
+    });
+    var key = '';
+    for (var i = 0; i < keyChars.length; i++) {
+        key += keyChars[i].character;
+    }
+
+    var ciphertext = '';
     function visit(node) {
-    node.children.forEach(c => visit(c));
-    ciphertext += node.character;
+        for (var i = 0; i < node.children.length; i++) {
+            visit(node.children[i]);
+        }
+        ciphertext += node.character;
     }
     visit(cipherCharTree);
 
-    let solution = '';
-
-    for (let i = 0; i < ciphertext.length; i++) {
-    solution += String.fromCharCode(key.charCodeAt(i) ^ ciphertext.charCodeAt(i));
+    var solution = '';
+    for (var i = 0; i < ciphertext.length; i++) {
+        solution += String.fromCharCode(key.charCodeAt(i) ^ ciphertext.charCodeAt(i));
     }
 
     return solution;
