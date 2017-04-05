@@ -1,5 +1,10 @@
 'use strict';
 
+if (process.env.NODE_ENV !== 'production') {
+  // Workaround to webpack-dev-server not reloading on index.html change
+  require('file-loader!./index.html')
+}
+
 import $ from 'jquery';
 
 require('../../vendor/foundation.css');
