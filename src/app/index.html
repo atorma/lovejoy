@@ -8,15 +8,15 @@
     <header class="header"></header>
 
     <main>
-        <div id="editor" class="editor">return function solve(keyChars, cipherCharTree) {
+        <div id="editor" class="editor">return function solve(keyCharArray, cipherCharTree) {
     /* Oma koodi tänne */
 
-    keyChars.sort(function (e1, e2) {
+    keyCharArray.sort(function (e1, e2) {
         return e1.sortOrder - e2.sortOrder;
     });
     var key = '';
-    for (var i = 0; i < keyChars.length; i++) {
-        key += keyChars[i].character;
+    for (var i = 0; i < keyCharArray.length; i++) {
+        key += keyCharArray[i].character;
     }
 
     var ciphertext = '';
