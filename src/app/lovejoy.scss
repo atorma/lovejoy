@@ -1,0 +1,52 @@
+$header-height: 18rem;
+$footer-height: 6rem;
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  margin: 0;
+  padding-bottom: $footer-height;
+}
+
+.header {
+  height: $header-height;
+  background: url('./lovejoy.jpg') no-repeat;
+  background-size: cover;
+}
+
+.footer {
+  height: 6rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #efefef;
+  padding: 1rem;
+}
+
+main {
+  position: absolute;
+  top: $header-height;
+  right: 0;
+  bottom: $footer-height;
+  left: 0;
+}
+
+.editor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

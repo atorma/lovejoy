@@ -5,12 +5,10 @@
     <title>Lovejoy</title>
 </head>
 <body data-whatinput="mouse">
-    <header class="header">
-        <span class="header__result"></span>
-    </header>
+    <header class="header"></header>
+
     <main>
-        <div class="code">
-            <div id="editor" class="editor">return function solve(keyChars, cipherCharTree) {
+        <div id="editor" class="editor">return function solve(keyChars, cipherCharTree) {
     /* Oma koodi tänne */
 
     keyChars.sort(function (e1, e2) {
@@ -37,13 +35,13 @@
 
     return solution;
 }</div>
-        </div>
-        <div class="row row--buttons">
-            <div class="columns text-right">
-                <button id="run-button" type="button" class="button primary">Aja!</button>
-            </div>
-        </div>
     </main>
+
+    <footer class="footer">
+        <div class="row column collapse row--buttons text-right">
+            <button id="run-button" type="button" class="button primary">Aja!</button>
+        </div>
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/mode-javascript.js" type="text/javascript"></script>

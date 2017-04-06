@@ -10,7 +10,7 @@ import $ from 'jquery';
 require('../../vendor/foundation.css');
 require('../../vendor/foundation');
 
-require('./lovejoy.css');
+require('./lovejoy.scss');
 import Editor from './editor';
 
 $(document).foundation();
