@@ -9,31 +9,10 @@
 
     <main>
         <div id="editor" class="editor">return function solve(keyCharArray, cipherCharTree) {
-    /* Oma koodi tänne */
-
-    keyCharArray.sort(function (e1, e2) {
-        return e1.sortOrder - e2.sortOrder;
-    });
-    var key = '';
-    for (var i = 0; i < keyCharArray.length; i++) {
-        key += keyCharArray[i].character;
-    }
-
-    var ciphertext = '';
-    function visit(node) {
-        for (var i = 0; i < node.children.length; i++) {
-            visit(node.children[i]);
-        }
-        ciphertext += node.character;
-    }
-    visit(cipherCharTree);
-
-    var solution = '';
-    for (var i = 0; i < ciphertext.length; i++) {
-        solution += String.fromCharCode(key.charCodeAt(i) ^ ciphertext.charCodeAt(i));
-    }
-
-    return solution;
+    /* Koodi tänne */
+    console.log(keyCharArray);
+    console.log(cipherCharTree);
+    return 'Tämä ei ole ratkaisu';
 }</div>
     </main>
 
@@ -42,6 +21,36 @@
             <button id="run-button" type="button" class="button primary">Aja!</button>
         </div>
     </footer>
+
+    <div id="intro" class="reveal" data-reveal>
+        <button type="button" class="close-button" data-close aria-label="Sulje">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="row">
+            <div class="column">
+                <h1>Lovejoy!</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <p>
+                    Vihamiehesi Gimbert on päässyt jäljille jostakin merkittävästä. Et vielä tiedä, mikä se on, mutta varmasti sen haluat.
+                </p>
+                <p>
+                    Onneksesi Gimbertin palvelimen tietoturva vuotaa kuin seula. Olet päässyt käsiksi sen tiedostoihin ja onnistunut löytämään jotakin lupaavaa. Harmillisesti tiedot on salattu.
+                </p>
+                <p>
+                    Lady Jane on jollain konstilla saanut hankittua sinulle salausavaimen, mutta ei ole osannut järjestää sitä oikein.
+                </p>
+                <p>
+                    Tinker Dill on kuullut, että kyse olisi jostakin "one-time padista, kirjainkoodeista ja ksorrista", ja että Gimbert olisi sotkenut salatekstinkin "syvään puuhun".
+                </p>
+                <p>
+                    Lovejoy, kaikki riippuu nyt sinun ohjelmointitaidoistasi. Pura salaus.
+                </p>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/mode-javascript.js" type="text/javascript"></script>

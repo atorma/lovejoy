@@ -22,3 +22,5 @@ const editor = new Editor((solve) => {
 });
 
 $('#run-button').click(() => editor.evalAndRun());
+
+$('#intro').foundation('open');
