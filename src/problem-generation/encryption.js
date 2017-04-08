@@ -20,11 +20,6 @@ function encrypt(cleartext) {
     const keyCharCode = getRandomCharCode();
     const cipherCharCode = cleartextCharCode ^ keyCharCode;
 
-    console.log(`${i}: 
-    (${keyCharCode.toString(16)}, ${String.fromCharCode(keyCharCode)}), 
-    (${cleartextCharCode.toString(16)}, ${cleartext.charAt(i)}), 
-    (${cipherCharCode.toString(16)}, ${String.fromCharCode(cipherCharCode)})`);
-
     result.key += String.fromCharCode(keyCharCode);
     result.ciphertext += String.fromCharCode(cipherCharCode);
   }
