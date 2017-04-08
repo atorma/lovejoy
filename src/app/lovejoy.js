@@ -14,13 +14,27 @@ require('./lovejoy.scss');
 import Editor from './editor';
 
 $(document).foundation();
-
-const editor = new Editor((solve) => {
-  const result = solve(ENCRYPTED.keyArray, ENCRYPTED.ciphertextTree);
-  console.log(result);
-  $('.header__result').html(result);
-});
-
-$('#run-button').click(() => editor.evalAndRun());
+$(document).ready(() => $(document.body).removeClass('invisible'));
 
 $('#intro').foundation('open');
+$('.header__help').click(() => {
+  $('#intro').foundation('open');
+});
+
+const editor = new Editor();
+editor.onChange(handleCode);
+$('#run-button').click(() => editor.evalAndRun(handleCode));
+
+function handleCode(solverFunction) {
+  $('.output').html('');
+  try {
+    const result = '' + solverFunction(ENCRYPTED.keyArray, ENCRYPTED.ciphertextTree);
+    $('.output')
+      .html(result)
+      .removeClass('output--error');
+  } catch (e) {
+    $('.output')
+      .html(e.name + ': ' + e.message)
+      .addClass('output--error')
+  }
+}

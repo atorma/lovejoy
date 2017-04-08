@@ -1,5 +1,9 @@
 'use strict';
 
 export default function evaluate(str) {
-  return eval(`(function() {${str}})`)();
+  try {
+    return eval(`(function() {${str}})`)();
+  } catch (e) {
+    return () => {throw e};
+  }
 }

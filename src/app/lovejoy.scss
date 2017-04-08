@@ -1,5 +1,8 @@
-$header-height: 18rem;
-$footer-height: 6rem;
+$header-padding: 1rem;
+$header-font-size: 3rem;
+$header-line-height: 1;
+$header-height: 2*$header-padding + $header-line-height*$header-font-size;
+$console-height: 18rem;
 
 html {
   height: 100%;
@@ -16,30 +19,77 @@ body {
   position: relative;
   min-height: 100%;
   margin: 0;
-  padding-bottom: $footer-height;
+  padding-bottom: $console-height;
+}
+
+.invisible {
+  visibility: hidden;
 }
 
 .header {
-  height: $header-height;
-  background: url('./lovejoy.jpg') no-repeat;
-  background-size: cover;
+  padding: $header-padding;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__heading {
+    font-size: $header-font-size;
+    line-height: $header-line-height;
+    width: 0;
+    flex-grow: 1;
+  }
+
+  &__help {
+    flex-grow: 0;
+    flex-basis: auto;
+  }
 }
 
-.footer {
-  height: 6rem;
+.console {
+  height: $console-height;
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #efefef;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.console__bar {
+  background-color: lightgrey;
+  padding: 0.5rem 1rem 0.5rem;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  .button {
+    margin-bottom: 0;
+  }
+}
+
+.console__title {
+  width: 0;
+  flex-grow: 1;
+}
+
+.output {
   padding: 1rem;
+  overflow: auto;
+  height: 100%;
+}
+
+.output--error {
+  color: red;
 }
 
 main {
   position: absolute;
   top: $header-height;
   right: 0;
-  bottom: $footer-height;
+  bottom: $console-height;
   left: 0;
 }
 
