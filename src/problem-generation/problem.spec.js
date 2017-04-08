@@ -15,11 +15,8 @@ describe('Problem', function () {
     const key = problem.keyArray.reduce((result, keyItem) => result + keyItem.character, '');
 
     let ciphertext = '';
-    let order = 1;
     function visit(node) {
       ciphertext += node.character;
-      node.order = order;
-      order++;
       node.children.forEach(c => visit(c));
     }
     visit(problem.ciphertextTree);
