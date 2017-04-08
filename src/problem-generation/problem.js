@@ -10,6 +10,9 @@ module.exports = generateProblem;
 function generateProblem(cleartext) {
   const encrypted = crypto.encrypt(cleartext);
 
+  console.log(encrypted.key);
+  console.log(encrypted.ciphertext);
+
   /* Shuffle the key */
 
   const keyChars = encrypted.key.split('');

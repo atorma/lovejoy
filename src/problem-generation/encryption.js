@@ -1,7 +1,9 @@
 'use strict';
 
-const UNICODE_MIN_CHARCODE = 0;
-const UNICODE_MAX_CHARCODE = 65535;
+// Javascript characters are UTF-16. String.charCodeAt returns code point without surrogate code unit.
+// See http://www.fileformat.info/info/charset/UTF-16/list.htm for which range this defines.
+const MIN_CHARCODE = '!'.charCodeAt(0);
+const MAX_CHARCODE = '~'.charCodeAt(0);
 
 module.exports = {
   encrypt: encrypt,
@@ -18,6 +20,11 @@ function encrypt(cleartext) {
     const cleartextCharCode = cleartext.charCodeAt(i);
     const keyCharCode = getRandomCharCode();
     const cipherCharCode = cleartextCharCode ^ keyCharCode;
+
+    console.log(`${i}: 
+    (${keyCharCode.toString(16)}, ${String.fromCharCode(keyCharCode)}), 
+    (${cleartextCharCode.toString(16)}, ${cleartext.charAt(i)}), 
+    (${cipherCharCode.toString(16)}, ${String.fromCharCode(cipherCharCode)})`);
 
     result.key += String.fromCharCode(keyCharCode);
     result.ciphertext += String.fromCharCode(cipherCharCode);
@@ -43,5 +50,5 @@ function decrypt(keyAndCiphertext) {
 }
 
 function getRandomCharCode() {
-  return Math.floor(Math.random() * (UNICODE_MAX_CHARCODE - UNICODE_MIN_CHARCODE)) + UNICODE_MIN_CHARCODE;
+  return Math.floor(Math.random() * (MAX_CHARCODE - MIN_CHARCODE)) + MIN_CHARCODE;
 }

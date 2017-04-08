@@ -23,7 +23,6 @@ describe('Problem', function () {
       node.children.forEach(c => visit(c));
     }
     visit(problem.ciphertextTree);
-    console.log(problem.ciphertextTree);
 
     let solution = '';
 
