@@ -10,12 +10,11 @@ function solve(keyCharArray, cipherCharTree) {
   var ciphertext = '';
 
   function visit(node) {
+    ciphertext += node.character;
     for (var i = 0; i < node.children.length; i++) {
       visit(node.children[i]);
     }
-    ciphertext += node.character;
   }
-
   visit(cipherCharTree);
 
   var solution = '';

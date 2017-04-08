@@ -15,11 +15,15 @@ describe('Problem', function () {
     const key = problem.keyArray.reduce((result, keyItem) => result + keyItem.character, '');
 
     let ciphertext = '';
+    let order = 1;
     function visit(node) {
-      node.children.forEach(c => visit(c));
       ciphertext += node.character;
+      node.order = order;
+      order++;
+      node.children.forEach(c => visit(c));
     }
     visit(problem.ciphertextTree);
+    console.log(problem.ciphertextTree);
 
     let solution = '';
 

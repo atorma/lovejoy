@@ -51,8 +51,8 @@ function generateProblem(cleartext) {
 
 
   function visit(node) {
-    node.children.forEach(child => visit(child));
     node.character = ciphertextCharStack.pop();
+    node.children.forEach(child => visit(child));
   }
 
   visit(ciphertextTree);
