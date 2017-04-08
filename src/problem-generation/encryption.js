@@ -1,9 +1,8 @@
 'use strict';
 
-// Javascript characters are UTF-16. String.charCodeAt returns code point without surrogate code unit.
-// See http://www.fileformat.info/info/charset/UTF-16/list.htm for which range this defines.
-const MIN_CHARCODE = '!'.charCodeAt(0);
-const MAX_CHARCODE = '~'.charCodeAt(0);
+// https://en.wikipedia.org/wiki/Basic_Latin_(Unicode_block)
+const MIN_CHARCODE = parseInt('0', 16);
+const MAX_CHARCODE = parseInt('7f', 16);
 
 module.exports = {
   encrypt: encrypt,
