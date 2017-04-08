@@ -1,6 +1,7 @@
 'use strict';
 
 import evaluate from './evaluation-context';
+import ace from 'ace';
 
 export default class Editor {
   constructor() {
