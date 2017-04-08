@@ -27,6 +27,7 @@ body {
 }
 
 .header {
+  height: $header-height;
   padding: $header-padding;
 
   display: flex;
@@ -38,11 +39,17 @@ body {
     line-height: $header-line-height;
     width: 0;
     flex-grow: 1;
+    margin: 0 1rem;
   }
 
   &__help {
     flex-grow: 0;
     flex-basis: auto;
+  }
+
+  &__image {
+    height: 100%;
+    width: auto;
   }
 }
 
@@ -55,35 +62,35 @@ body {
 
   display: flex;
   flex-direction: column;
-}
 
-.console__bar {
-  background-color: lightgrey;
-  padding: 0.5rem 1rem 0.5rem;
+  &__bar {
+    background-color: lightgrey;
+    padding: 0.5rem 1rem 0.5rem;
 
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 
-  .button {
-    margin-bottom: 0;
+    .button {
+      margin-bottom: 0;
+    }
   }
-}
 
-.console__title {
-  width: 0;
-  flex-grow: 1;
-  margin-right: 1rem;
-}
+  &__title {
+    width: 0;
+    flex-grow: 1;
+    margin-right: 1rem;
+  }
 
-.console__output {
-  padding: 1rem;
-  overflow: auto;
-  height: 100%;
-}
+  &__output {
+    padding: 1rem;
+    overflow: auto;
+    height: 100%;
+  }
 
-.output--error {
-  color: red;
+  &--error {
+    color: red;
+  }
 }
 
 main {

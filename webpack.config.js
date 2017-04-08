@@ -11,7 +11,8 @@ module.exports = {
   entry: './src/app/lovejoy.js',
   output: {
     filename: 'lovejoy.js',
-    path: path.join(__dirname, 'dist')
+    path: path.join(__dirname, 'dist'),
+    publicPath: '/'
   },
   devtool: 'source-map',
   plugins: [
@@ -80,7 +81,7 @@ if (process.env.NODE_ENV === 'dev') {
     //contentBase: path.join(__dirname, 'dist'),
     // match the output path
 
-    //publicPath: '/'
+    publicPath: '/'
     // match the output `publicPath`
   };
 

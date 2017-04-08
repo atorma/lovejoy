@@ -5,16 +5,21 @@ if (process.env.NODE_ENV !== 'production') {
   require('file-loader!./index.html')
 }
 
-import $ from 'jquery';
-
 require('../../vendor/foundation.css');
 require('../../vendor/foundation');
-
 require('./lovejoy.scss');
+
+import $ from 'jquery';
 import Editor from './editor';
+
 
 $(document).foundation();
 $(document).ready(() => $(document.body).removeClass('invisible'));
+
+
+const headerImgSrc = require('!!file-loader?name=gimbert.jpg!./gimbert.jpg');
+$(`<img src="${headerImgSrc}" class="header__image" />`).prependTo($('header'));
+
 
 $('#intro').foundation('open');
 $('.header__help').click(() => {
