@@ -15,12 +15,12 @@ function encrypt(cleartext) {
   };
 
   for (let i = 0; i < cleartext.length; i++) {
-    const cleartextCharCode = cleartext.charCodeAt(i);
+    const cleartextCharCode = cleartext.codePointAt(i);
     const keyCharCode = getRandomCharCode();
     const cipherCharCode = cleartextCharCode ^ keyCharCode;
 
-    result.key += String.fromCharCode(keyCharCode);
-    result.ciphertext += String.fromCharCode(cipherCharCode);
+    result.key += String.fromCodePoint(keyCharCode);
+    result.ciphertext += String.fromCodePoint(cipherCharCode);
   }
 
   return result;
@@ -32,11 +32,11 @@ function decrypt(keyAndCiphertext) {
   let result = '';
 
   for (let i = 0; i < key.length; i++) {
-    const keyCharCode = key.charCodeAt(i);
-    const cipherCharCode = ciphertext.charCodeAt(i);
+    const keyCharCode = key.codePointAt(i);
+    const cipherCharCode = ciphertext.codePointAt(i);
     const cleartextCharCode = keyCharCode ^ cipherCharCode;
 
-    result += String.fromCharCode(cleartextCharCode);
+    result += String.fromCodePoint(cleartextCharCode);
   }
 
   return result;

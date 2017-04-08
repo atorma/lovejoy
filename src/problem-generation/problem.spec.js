@@ -8,7 +8,7 @@ import generateProblem from './problem';
 describe('Problem', function () {
 
   it('has a solution', function () {
-    const cleartext = 'Morjens';
+    const cleartext = '                        Lennä Barcelonaan!                        ';
     const problem = generateProblem(cleartext);
 
     problem.keyArray.sort((e1, e2) => e1.sortOrder - e2.sortOrder);
@@ -23,12 +23,11 @@ describe('Problem', function () {
       node.children.forEach(c => visit(c));
     }
     visit(problem.ciphertextTree);
-    console.log(problem.ciphertextTree);
 
     let solution = '';
 
     for (let i = 0; i < ciphertext.length; i++) {
-      solution += String.fromCharCode(key.charCodeAt(i) ^ ciphertext.charCodeAt(i));
+      solution += String.fromCodePoint(key.codePointAt(i) ^ ciphertext.codePointAt(i));
     }
 
     solution.should.be.equal(cleartext);
