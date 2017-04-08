@@ -4,8 +4,9 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const generateProblem = require('./src/problem-generation/problem');
+const fs = require('fs');
 
-const cleartext = '                        Lennä Barcelonaan!                        ';
+const cleartext = fs.readFileSync('./cleartext.txt', 'utf-8');
 
 module.exports = {
   entry: './src/app/lovejoy.js',
