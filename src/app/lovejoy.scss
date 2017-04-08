@@ -73,9 +73,10 @@ body {
 .console__title {
   width: 0;
   flex-grow: 1;
+  margin-right: 1rem;
 }
 
-.output {
+.console__output {
   padding: 1rem;
   overflow: auto;
   height: 100%;
@@ -99,4 +100,12 @@ main {
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+.intro__lovejoy-face {
+  float: left;
+  width: 33%;
+  height: auto;
+  margin: 0.4rem 1rem 1rem 0;
+  vertical-align: middle;
 }

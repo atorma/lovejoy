@@ -26,14 +26,14 @@ editor.onChange(handleCode);
 $('#run-button').click(() => editor.evalAndRun(handleCode));
 
 function handleCode(solverFunction) {
-  $('.output').html('');
+  $('.console__output').html('');
   try {
     const result = '' + solverFunction(ENCRYPTED.keyArray, ENCRYPTED.ciphertextTree);
-    $('.output')
+    $('.console__output')
       .html(result)
       .removeClass('output--error');
   } catch (e) {
-    $('.output')
+    $('.console__output')
       .html(e.name + ': ' + e.message)
       .addClass('output--error')
   }
