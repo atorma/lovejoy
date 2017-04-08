@@ -19,7 +19,7 @@ function solve(keyCharArray, cipherCharTree) {
 
   var solution = '';
   for (var i = 0; i < ciphertext.length; i++) {
-    solution += String.fromCodePoint(key.codePointAt(i) ^ ciphertext.codePointAt(i));
+    solution += String.fromCharCode(key.charCodeAt(i) ^ ciphertext.charCodeAt(i));
   }
 
   return solution;
