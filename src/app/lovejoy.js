@@ -17,10 +17,6 @@ $(document).foundation();
 $(document).ready(() => $(document.body).removeClass('invisible'));
 
 
-const headerImgSrc = require('!!file-loader?name=gimbert.jpg!./gimbert.jpg');
-$(`<img src="${headerImgSrc}" class="header__image" />`).prependTo($('header'));
-
-
 $('#intro').foundation('open');
 $('.header__help').click(() => {
   $('#intro').foundation('open');
@@ -36,10 +32,10 @@ function handleCode(solverFunction) {
     const result = '' + solverFunction(ENCRYPTED.keyArray, ENCRYPTED.ciphertextTree);
     $('.console__output')
       .html(result)
-      .removeClass('output--error');
+      .removeClass('console--error');
   } catch (e) {
     $('.console__output')
       .html(e.name + ': ' + e.message)
-      .addClass('output--error')
+      .addClass('console--error')
   }
 }
