@@ -12,7 +12,7 @@ module.exports = {
   entry: './src/app/lovejoy.js',
 
   output: {
-    filename: 'lovejoy.js',
+    filename: 'lovejoy.[hash].js',
     path: path.join(__dirname, 'dist')
   },
 
