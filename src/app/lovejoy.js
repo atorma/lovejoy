@@ -14,7 +14,6 @@ import Editor from './editor';
 
 
 $(document).foundation();
-$(document).ready(() => $(document.body).removeClass('invisible'));
 
 
 $('#intro').foundation('open');
@@ -39,3 +38,5 @@ function handleCode(solverFunction) {
       .addClass('console--error')
   }
 }
+
+$(document.body).removeClass('invisible');
